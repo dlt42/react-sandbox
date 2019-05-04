@@ -1,0 +1,6 @@
+{
+  "schemaList": [
+  	{ "id": "personalDetails", "name": "Personal Details" },
+  	{ "id": "educationDetails", "name": "Education Details" }
+  ]
+}

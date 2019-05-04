@@ -1,0 +1,44 @@
+{
+  "name": "educationDetails",
+  "schema": {
+    "title": "Education Details",
+    "description": "A form to specify details regarding a period of education.",
+    "type": "object",
+    "required": [
+      "establishment"
+    ],
+    "labelFields": [
+      "establishment",
+      "start",
+      "finish"
+    ],
+    "properties": {
+      "establishment": {
+        "type": "string",
+        "title": "Establishment"
+      },
+      "start": {
+        "type": "string",
+        "title": "Start",
+        "format": "date"
+      },
+      "finish": {
+        "type": "string",
+        "title": "Finish",
+        "format": "date"
+      }
+    }
+  },
+  "uiSchema": {
+    "establishment": {
+      "classNames": "",
+      "ui:emptyValue": ""
+    },
+    "start": {
+      "ui:widget": "date"
+    },
+    "finish": {
+      "ui:widget": "date"
+    }
+  }
+}

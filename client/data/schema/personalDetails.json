@@ -1,0 +1,53 @@
+{
+  "name": "personalDetails",
+  "schema": {
+    "title": "Personal Details",
+    "description": "A form to specify personal details.",
+    "type": "object",
+    "required": [
+      "firstName",
+      "lastName"
+    ],
+    "labelFields": [
+      "firstName",
+      "lastName"
+    ],
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First name"
+      },
+      "lastName": {
+        "type": "string",
+        "title": "Last name"
+      },
+      "dob": {
+        "type": "string",
+        "title": "Date of birth",
+        "format": "date"
+      },
+      "telephone": {
+        "type": "string",
+        "title": "Telephone",
+        "minLength": 10
+      }
+    }
+  },
+  "uiSchema": {
+    "firstName": {
+      "classNames": "",
+      "ui:emptyValue": "",
+      "title": "First name"
+    },
+    "dob": {
+      "ui:widget": "date",
+      "title": "Date of birth"
+    },
+    "telephone": {
+      "ui:options": {
+        "inputType": "tel"
+      },
+      "title": "Telephone"
+    }
+  }
+}

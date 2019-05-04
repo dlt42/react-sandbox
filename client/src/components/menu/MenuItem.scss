@@ -1,0 +1,32 @@
+.menu-item {
+
+	text-decoration: none;
+    cursor: pointer;
+    display: block;
+    padding-left: 2rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius:.5rem;
+    color: #000;
+
+    &:hover {
+
+		text-decoration: none;
+    	background-color: #757575;
+    	color: #FFF;
+
+    }
+    
+}
+
+.menu-item.selected {
+
+	color: #ce1414;
+
+	&:hover {
+
+    	color: #FFF;
+
+    }
+
+}

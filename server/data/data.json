@@ -1,0 +1,22 @@
+{
+  "personalDetails": [
+    {
+      "firstName": "a",
+      "lastName": "b",
+      "telephone": "1112223334",
+      "id": "53f387b0-57ca-11e9-af13-93a318894aea",
+      "label": "a b",
+      "updated": 1556995421888
+    }
+  ],
+  "educationDetails": [
+    {
+      "establishment": "Oxford",
+      "start": "2019-04-01",
+      "finish": "2019-05-01",
+      "id": "99398060-58b8-11e9-833f-49120b208b23",
+      "label": "Oxford 2019-04-01 2019-05-01",
+      "created": 1554588565694
+    }
+  ]
+}
