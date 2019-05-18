@@ -1,6 +1,6 @@
 export function transformErrors (errors, schema, uischema, formData) {
   errors = errors.filter(error => {
-    const field = error.property.substring(1);
+    const field = error.property.substring(1)
     const required = schema.required.indexOf(field) > -1
     const errorName = error.name
     const isBlank = formData[field] === ""

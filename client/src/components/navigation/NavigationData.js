@@ -1,48 +1,35 @@
 import { matchPath } from 'react-router'
-
 import { findNestedByAttribute } from 'DataUtil'
 
+const navItem = (id, label, linkValue, linkIsOverride, menu, pages) => {
+  return {
+    id: id,
+    label: label,
+    link: { 
+      value: linkValue, 
+      isOverride: linkIsOverride 
+    },
+    menu: menu,
+    pages: pages
+  }
+}
+
 const navData = {
-  pages: [{
-    id: 'home',
-    label: 'Home',
-    link: { value: '/', isOverride: false },
-    menu: true
-  }, {
-    id: 'formList',
-    label: 'Form List',
-    link: { value: '/form-list', isOverride: false },
-    menu: true,
-    pages: [{
-      id: 'formListHelp',
-      label: 'Form List Help',
-      link: { value: '/form-list/help', isOverride: false },
-      menu: true
-    }]
-  }, {
-    id: 'dataList',
-    label: 'Record List',
-    link: { value: '/record-list/:schemaId/:listId', isOverride: false },
-    menu: false
-  }, {
-    id: 'formNew',
-    label: 'New Record',
-    link: { value: '/form/:schemaId/:dataId/:instruction', isOverride: false },
-    menu: false
-  }, {
-    id: 'form',
-    label: 'Record',
-    link: { value: '/form/:schemaId/:dataId', isOverride: false },
-    menu: false
-  }, {
-    id: 'notFound',
-    label: 'Resource Not Found',
-    link: { value: '*', isOverride: true },
-    menu: false
-  }],
   label: 'Content',
   id: 'home',
-  variant: 'default'
+  variant: 'default',
+  pages: [
+    navItem('home', 'Home', '/', false, true, null),
+    navItem('formList', 'Form List', '/form-list', false, true, [
+      navItem('formListHelp', 'Form List Help', false, true, null)
+    ]),
+    navItem('dataList', 'Record List', '/record-list/:schemaId/:listId', false, false, null),
+    navItem('formNew', 'New Record', '/form/:schemaId/:dataId/:instruction', false, false, null),
+    navItem('form', 'Record', '/form/:schemaId/:dataId', false, false, null),
+    navItem('notFound', 'Resource Not Found', '*', true, false, null),
+    navItem('login', 'Login', '/login', false, false, null),
+    navItem('signup', 'Sign Up', '/signup', false, false, null)
+  ]  
 }
 
 class NavigationData {

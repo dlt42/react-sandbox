@@ -27,8 +27,10 @@ The server is comprised of Node.js running:
 * Socket.io for websocket updates to the client
 * Axios for REST communication with the database
 * Cors to allow the client to access the server
+* Mongoose and MongoDB is used for storing user data
+* Passport is used for authentication using web tokens
 
-The database is provided by JSON Server
+The record database is provided by JSON Server (to be migrated to MongoDB)
 
 
 [JSON Schema](https://json-schema.org/) will be used for form definition and [react-jsonschema-form](https://react-jsonschema-form.readthedocs.io/en/latest/) with template customisation will be used for form generation.
@@ -38,13 +40,14 @@ The database is provided by JSON Server
 
 Requires the installation of:
 * [Node.js with bundled npm](https://nodejs.org/en/)
+* [Mongo DB](https://docs.mongodb.com/manual/administration/install-community/)
 
 Navigate to the client and server directories in turn and run:
 
 ### `npm install`
 
 
-## Client Scripts
+## Client Script
 
 From the client directory the following can be run:
 
@@ -62,3 +65,6 @@ Runs the Node server on port 4001
 
 Runs [JSON Server](https://github.com/typicode/json-server) on port 3001 against the file `data/data.json`, providing a JSON store for application data.
 
+### `npm run mongo`
+
+Runs MongoDB on port 27017 against `data/db`. Delete the contents of this folder to start over.

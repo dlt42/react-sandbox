@@ -6,6 +6,8 @@ import FormListHelpPage from 'Pages/FormListHelpPage'
 import FormListPage from 'Pages/FormListPage'
 import RecordListPage from 'Pages/RecordListPage'
 import FormPage from 'Pages/FormPage'
+import SignUpPage from 'Pages/SignUpPage'
+import LoginPage from 'Pages/LoginPage'
 
 export {
   Error404Page,
@@ -15,5 +17,7 @@ export {
   FormListHelpPage,
   FormListPage,
   RecordListPage,
-  FormPage
+  FormPage,
+  SignUpPage,
+  LoginPage
 }

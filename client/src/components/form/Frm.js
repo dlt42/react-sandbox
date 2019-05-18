@@ -187,7 +187,12 @@ class Frm extends Component {
   }
 }
 
-Frm.propTypes = {}
+Frm.propTypes = {
+  history: PropTypes.object.isRequired,
+  instruction: PropTypes.string,
+  schemaId: PropTypes.string.isRequired,
+  id: PropTypes.string
+}
 
 const mapStateToProps = (state, ownProps) => {
   return {

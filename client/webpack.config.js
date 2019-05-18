@@ -77,7 +77,9 @@ module.exports = {
       Pages: path.resolve(__dirname, 'src/components/pages/'),
       Reducers: path.resolve(__dirname, 'src/reducers/'),
       DataUtil: path.resolve(__dirname, 'src/util/dataUtil.js'),
-      RequestDetails: path.resolve(__dirname, 'src/util/RequestDetails.js')
+      RequestDetails: path.resolve(__dirname, 'src/util/RequestDetails.js'),
+      Authentication: path.resolve(__dirname, 'src/components/authentication/'),
+      Config: path.resolve(__dirname, 'src/config/Config.js')
     },
     extensions: ['*', '.js', '.jsx']
   },

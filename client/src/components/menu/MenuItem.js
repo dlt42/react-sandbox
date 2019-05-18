@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-
 import { classNames } from 'DataUtil'
-
 import './MenuItem.scss'
 
 const MenuItem = (props) => {
@@ -11,7 +9,10 @@ const MenuItem = (props) => {
     'menu-item': true,
     'selected': props.link === props.pathname
   })
-  const { link, label } = props
+  const { 
+    link, 
+    label 
+  } = props
   return link ? (
     <Link to={link} className={classes}>
       { label }

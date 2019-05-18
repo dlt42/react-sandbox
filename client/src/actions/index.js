@@ -21,6 +21,13 @@ import {
   fetchSchema
 } from 'Actions/schemaActions'
 
+import {
+  SET_AUTH_TOKEN,
+  CLEAR_AUTH_TOKEN,
+  setAuthToken,
+  clearAuthToken
+} from 'Actions/authActions'
+
 export {
   SAVE_RECORD,
   SAVED_RECORD,
@@ -38,5 +45,9 @@ export {
   fetchSchemaList,
   REQUEST_SCHEMA,
   RECEIVE_SCHEMA,
-  fetchSchema
+  fetchSchema,
+  SET_AUTH_TOKEN,
+  CLEAR_AUTH_TOKEN,
+  setAuthToken,
+  clearAuthToken
 }

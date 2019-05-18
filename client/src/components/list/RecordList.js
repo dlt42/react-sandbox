@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
-
 import { PageContainer } from 'Pages'
 import { fetchRecordList } from 'Actions'
-import { isRequestingRecordList, getRecordList, isRecordListDifferent } from 'Reducers'
+import {
+  isRequestingRecordList, 
+  getRecordList, 
+  isRecordListDifferent 
+} from 'Reducers'
 
 const uuidv1 = require('uuid/v1')
 
@@ -58,10 +61,11 @@ class RecordList extends Component {
 
   create() {
     const { 
-      schemaId
+      schemaId,
+      history
     } = this.props
     const id = uuidv1()
-    this.props.history.push(`/form/${schemaId}/${id}/new`)
+    history.push(`/form/${schemaId}/${id}/new`)
   }
 
   render () {
@@ -103,7 +107,10 @@ class RecordList extends Component {
   }
 }
 
-RecordList.propTypes = {}
+RecordList.propTypes = {
+  schemaId: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired
+}
 
 const mapStateToProps = (state, ownProps) => {
   return {

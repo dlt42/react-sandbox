@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-
 import recordReducer, {
   isRequestingRecord,
   getRecord,
@@ -13,10 +12,12 @@ import schemaReducer, {
   isSchemaDifferent,
   isRequestingSchemaList
 } from './schemaReducer'
+import authReducer from './authReducer'
 
 export const rootReducer = combineReducers({
   recordStore: recordReducer,
-  schemaStore: schemaReducer
+  schemaStore: schemaReducer,
+  authStore: authReducer
 })
 
 export {

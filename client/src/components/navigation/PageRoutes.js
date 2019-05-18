@@ -3,7 +3,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-
 import { MenuContainer } from 'Menu'
 import {
   HomePage,
@@ -11,15 +10,18 @@ import {
   FormListHelpPage,
   RecordListPage,
   FormPage,
-  Error404Page
+  Error404Page,
+  SignUpPage,
+  LoginPage
 } from 'Pages'
-
 import './PageRoutes.scss'
 
 const PageRoutes = (props) =>
   <div className='view'>
     <Switch>
       <Route path='/' exact component={HomePage} />
+      <Route path='/signup' exact component={SignUpPage} />
+      <Route path='/login' exact component={LoginPage} />
       <Route path='/form-list' exact component={FormListPage} />
       <Route path='/form-list/help' component={FormListHelpPage} />
       <Route path='/record-list/:schemaId/:listId' component={RecordListPage} />

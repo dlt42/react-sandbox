@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import config from 'Config'
 
 export const SAVE_RECORD = 'SAVE_RECORD'
 const saveRecord = (schemaId, id, record) => ({
@@ -17,11 +18,11 @@ const savedRecord = (schemaId, id) => ({
 })
 
 export function createRecord (schemaId, id, record) {
-  return persistRecord(schemaId, id, record, "post", `http://localhost:4001/record/${schemaId}`)
+  return persistRecord(schemaId, id, record, "post", `${config.server}/record/${schemaId}`)
 }
 
 export function updateRecord (schemaId, id, record) {
-  return persistRecord(schemaId, id, record, "put", `http://localhost:4001/record/${schemaId}/${id}`)
+  return persistRecord(schemaId, id, record, "put", `${config.server}/record/${schemaId}/${id}`)
 }
 
 function persistRecord (schemaId, id, record, method, url) {
@@ -38,8 +39,9 @@ function persistRecord (schemaId, id, record, method, url) {
       })
       .then(
         response => dispatch(savedRecord(schemaId, id)),
-        error => console.log('An error occurred.', error)
+        error => console.log('An error occurred', error)
       )
+      .catch(error => console.log('An error occurred', error))
   }
 }
 
@@ -67,12 +69,13 @@ export function fetchRecord (schemaId, id) {
     dispatch(requestRecord(schemaId, id))
     return axios({
         method: "get",
-        url: `http://localhost:4001/record/${schemaId}/${id}` 
+        url: `${config.server}/record/${schemaId}/${id}` 
       })
       .then(
-        response => dispatch(receiveRecord(schemaId, id, response.data.record)),
-        error => console.log('An error occurred.', error)
+        response => dispatch(receiveRecord(schemaId, id, response ? response.data.record : {})),
+        error => console.log('An error occurred', error)
       )
+      .catch(error => console.log('An error occurred', error))
   }
 }
 
@@ -100,11 +103,12 @@ export function fetchRecordList (schemaId, listId) {
     dispatch(requestRecordList(schemaId, listId))
     return axios({
         method: "get",
-        url: `http://localhost:4001/record/${schemaId}` 
+        url: `${config.server}/record/${schemaId}` 
       })
       .then(
-        response => dispatch(receiveRecordList(schemaId, listId, response.data.list)),
-        error => console.log('An error occurred.', error)
+        response => dispatch(receiveRecordList(schemaId, listId, response ? response.data.list : [])),
+        error => console.log('An error occurred', error)
       )
+      .catch(error => console.log('An error occurred', error))
   }
 }

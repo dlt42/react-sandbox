@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FaBars } from 'react-icons/fa'
-
 import {
   anyDifference,
   classNames
 } from 'DataUtil'
 import { MenuItem } from 'Menu'
-
 import 'Menu/NestedMenu.scss'
 
 const defaultProps = {
@@ -132,11 +130,15 @@ class NestedMenu extends Component {
   }
 
   render () {
+    const {
+      pages
+    } = this.props
+
     // Render the menu toggle and the menu
     return (
       <div className='dropdown--nested' onClick={this.handleDropdownToggle} onMouseLeave={this.handleDropdownClose}>
         { this.renderDisplay() }
-        { this.renderMenu(this.props.pages) }
+        { this.renderMenu(pages) }
       </div>
     )
   }

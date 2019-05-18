@@ -1,0 +1,54 @@
+.fieldBlock {
+
+	display: flex;
+	flex-direction: column;
+
+	.errors {
+		align-items: center;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: tomato;
+	}
+
+	.fieldRow {
+
+		display: flex;
+		flex-direction: row;
+		margin-top: 10px;
+
+		.fieldLabel {
+		  flex-basis: 50%;
+    	text-align: right;
+    	margin-right: 10px;
+		}
+
+		.fieldInput {
+		 	display: flex;
+			flex-direction: row;
+			align-items: center;
+	    flex-basis: 50%;
+
+			input {
+				flex-basis: 50%;
+			}
+
+			.fieldError {
+				flex-basis: 50%;
+				justify-content: left;
+		    margin-left: 10px;
+		    color: tomato;
+		    font-size: 12px;
+		    font-weight: bold;
+		    text-align: left;
+			}
+		}
+
+	}
+
+	.controls {
+		justify-content: center;
+    margin-bottom: 40px;
+	}
+}

@@ -3,24 +3,16 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import socketIOClient from "socket.io-client"
-
 import PageRoutes from './navigation/PageRoutes'
+import config from 'Config'
 
 class Root extends Component {
-	constructor() {
-    super()
-    this.state = {
-      endpoint: "http://127.0.0.1:4001"
-    }
-  }
-
   componentDidMount() {
-    const { endpoint } = this.state
-    const socket = socketIOClient(endpoint);
+    const socket = socketIOClient(config.endpoint);
     socket.on("FromAPI", (data) => {
-			// do something with data
-			console.log(data)
-    });
+			// TODO: Do something with data
+			// console.log(data)
+    })
   }
 
   render() { 

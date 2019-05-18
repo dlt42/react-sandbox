@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
 import { PageContainer } from 'Pages'
 import { Frm } from 'Form'
 
 class FormPage extends Component {
-  constructor (props) {
-    super(props)
-  }
   
   render () {
     const {
@@ -16,13 +12,18 @@ class FormPage extends Component {
       instruction
     } = this.props.match.params
     return (
-      <PageContainer>
-        <Frm schemaId={schemaId} id={id} instruction={instruction}/>
+      <PageContainer secure={true}>
+        <Frm schemaId={schemaId} id={id} instruction={instruction} />
       </PageContainer>
     )
   }
 }
 
-FormPage.propTypes = {}
+FormPage.propTypes = {
+  match: PropTypes.object.isRequired,
+  schemaId: PropTypes.string,
+  id: PropTypes.string,
+  instruction: PropTypes.string
+}
 
 export default FormPage
